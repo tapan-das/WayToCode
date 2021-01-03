@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+    
+        'tapan' => [
+            'driver' => 'session',
+            'provider' => 'tapans',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -70,7 +75,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+    
+        'tapans' => [
+            'driver' => 'eloquent',
+            'model' => App\Tapan::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -95,6 +104,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'tapans' => [
+            'provider' => 'tapans',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
